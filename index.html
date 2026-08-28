@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AURA // Premium Parallax Cinematic Experience</title>
+  <meta name="description" content="Uma experiência cinematográfica de parallax scroll de alto padrão. Fluidez de 60 FPS, profundidade em múltiplas camadas e iluminação volumétrica inspirada na Apple, Linear e Awwwards." />
+
+  <!-- Preconnect Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body class="bg-obsidian text-bone selection-gold">
+
+  <!-- Custom Cursor System -->
+  <div id="custom-cursor" class="custom-cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+  <!-- Noise Film Grain Texture Overlay -->
+  <div class="film-grain" aria-hidden="true"></div>
+
+  <!-- Ambient Glow Canvas / Three.js Canvas Container -->
+  <div id="webgl-container" class="webgl-container" aria-hidden="true"></div>
+
+  <!-- Persistent Luxury Navigation Header -->
+  <header id="site-header" class="site-header">
+    <div class="header-inner">
+      <a href="#" class="brand-logo magnetic-target">
+        <span class="brand-icon">✦</span>
+        <span class="brand-text">AURA<span class="gold-dot">.</span>LAB</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#depth-section" class="nav-link magnetic-target">Profundidade</a>
+        <a href="#story-section" class="nav-link magnetic-target">Narrativa</a>
+        <a href="#gallery-section" class="nav-link magnetic-target">Galeria</a>
+        <a href="#sticky-section" class="nav-link magnetic-target">Mecânica</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="sound-toggle" class="sound-toggle magnetic-target" title="Alternar Paisagem Sonora">
+          <span class="sound-waves">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </span>
+          <span class="sound-label">AUDIO: OFF</span>
+        </button>
+        <a href="#final-section" class="btn-primary magnetic-target">
+          <span>Explorar</span>
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Scroll Container for Lenis -->
+  <main id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <!-- ========================================== -->
+      <!-- SEÇÃO 1: HERO IMERSIVO (100vh)             -->
+      <!-- ========================================== -->
+      <section id="hero-section" class="section hero-section">
+        <!-- Volumetric Ambient Light Aura -->
+        <div class="hero-volumetric-glow" aria-hidden="true"></div>
+
+        <div class="hero-content">
+          <div class="hero-badge-wrap">
+            <div class="hero-badge">
+              <span class="badge-pulse"></span>
+              <span class="badge-text">CINEMATIC SCROLL ARCHITECTURE</span>
+            </div>
+          </div>
+
+          <h1 class="hero-headline">
+            <span class="line-reveal"><span class="reveal-inner">A FÍSICA DO</span></span>
+            <span class="line-reveal italic-serif"><span class="reveal-inner text-gold-gradient">MOVIMENTO PURO</span></span>
+            <span class="line-reveal"><span class="reveal-inner">EM TEMPO REAL</span></span>
+          </h1>
+
+          <p class="hero-subline">
+            Uma coreografia milimétrica de inércia, profundidade anamórfica e luz volumétrica. Onde cada rolagem dita o ritmo da percepção.
+          </p>
+
+          <div class="hero-meta-grid">
+            <div class="meta-item">
+              <span class="meta-label">CADÊNCIA</span>
+              <span class="meta-val">60.0 FPS SINK</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">INTERPOLAÇÃO</span>
+              <span class="meta-val">LENIS INERTIAL</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">PROFUNDIDADE</span>
+              <span class="meta-val">3D WEBGL CORE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Animated Scroll Indicator -->
+        <div class="scroll-indicator magnetic-target">
+          <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+          </div>
+          <span class="scroll-text">ROLE PARA DESCOBRIR</span>
+          <div class="scroll-chevron-wrap">
+            <span class="chevron-line"></span>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ========================================== -->
+      <!-- SEÇÃO 2: PROFUNDIDADE (3 CAMADAS PARALLAX) -->
+      <!-- ========================================== -->
+      <section id="depth-section" class="section depth-section">
+        <div class="depth-backdrop-glow"></div>
+
+        <!-- Layer 1: Background Distante (Velocidade Lenta) -->
+        <div class="depth-layer layer-back" data-speed="0.2">
+          <div class="cosmic-grid-pattern"></div>
+          <div class="floating-ring-back"></div>
+          <div class="depth-coords">COORD: [24.891, -78.432] // SPATIAL MATRIX</div>
+        </div>
+
+        <!-- Layer 2: Elemento Intermediário (Velocidade Normal) -->
+        <div class="depth-layer layer-mid" data-speed="0.6">
+          <div class="container">
+            <div class="depth-header">
+              <span class="section-tag">02 // MULTI-LAYER DISPLACEMENT</span>
+              <h2 class="section-title">
+                Camadas que respiram <br />
+                <span class="text-gold-gradient">em velocidades assíncronas.</span>
+              </h2>
+              <p class="section-desc">
+                Três planos visuais independentes criam uma ilusão tangível de profundidade ótica. Ao rolar, a velocidade desacoplada simula o foco de uma lente anamórfica de 35mm.
+              </p>
+            </div>
+
+            <!-- Floating Glass Cards in Midground -->
+            <div class="mid-cards-grid">
+              <div class="glass-card card-mid-1 magnetic-spotlight">
+                <div class="card-glow-spot"></div>
+                <div class="card-icon">◈</div>
+                <h3 class="card-title">Paralaxe Ótica</h3>
+                <p class="card-text">Interpolação contínua calculada em tempo real pelo loop de renderização do motor gráfico.</p>
+                <div class="card-footer-metric">VELOCIDADE: 0.6x OFFSET</div>
+              </div>
+
+              <div class="glass-card card-mid-2 magnetic-spotlight">
+                <div class="card-glow-spot"></div>
+                <div class="card-icon">✧</div>
+                <h3 class="card-title">Refração de Luz</h3>
+                <p class="card-text">Bordas micro-biseladas com difusão de luz que reagem dinamicamente à posição do seu mouse.</p>
+                <div class="card-footer-metric">DISPERSÃO: 120PX BLUR</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Layer 3: Elemento em Primeiro Plano (Velocidade Ultra Rápida) -->
+        <div class="depth-layer layer-fore" data-speed="1.4">
+          <div class="foreground-monolith glass-monolith">
+            <div class="monolith-inner">
+              <div class="monolith-badge">PROXIMIDADE // 1.4X SPEED</div>
+              <div class="monolith-glare"></div>
+              <div class="monolith-content">
+                <span class="monolith-number">01</span>
+                <div class="monolith-info">
+                  <h4>Primeiro Plano Cinemático</h4>
+                  <p>Passagem ultrarrápida com ampliação de escala dinâmica.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="foreground-orb">
+            <div class="orb-core"></div>
+            <div class="orb-ring"></div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ========================================== -->
+      <!-- SEÇÃO 3: STORYTELLING (PINNED PHRASE-BY-PHRASE) -->
+      <!-- ========================================== -->
+      <section id="story-section" class="section story-section">
+        <div class="story-pin-wrapper">
+          <div class="story-bg-aura"></div>
+          
+          <div class="story-header-indicator">
+            <span class="story-tag">03 // NARRATIVA CINEMATOGRÁFICA</span>
+            <div class="story-progress-bar">
+              <div class="story-progress-fill"></div>
+            </div>
+          </div>
+
+          <div class="story-phrases-container">
+            <!-- Frase 1 -->
+            <div class="story-phrase phrase-1" data-phrase="1">
+              <span class="phrase-index">01 — PREMISS</span>
+              <p class="phrase-text">
+                O movimento não é apenas velocidade na tela.
+              </p>
+            </div>
+
+            <!-- Frase 2 -->
+            <div class="story-phrase phrase-2" data-phrase="2">
+              <span class="phrase-index">02 — CONEXÃO</span>
+              <p class="phrase-text">
+                É a ponte invisível entre a <span class="text-gold-gradient">intenção do olhar</span> e a matéria digital.
+              </p>
+            </div>
+
+            <!-- Frase 3 -->
+            <div class="story-phrase phrase-3" data-phrase="3">
+              <span class="phrase-index">03 — DINÂMICA</span>
+              <p class="phrase-text">
+                Cada fração de rolagem deforma a gravidade, revelando novas perspectivas.
+              </p>
+            </div>
+
+            <!-- Frase 4 -->
+            <div class="story-phrase phrase-4" data-phrase="4">
+              <span class="phrase-index">04 — TRANSCENDÊNCIA</span>
+              <p class="phrase-text">
+                Transformando navegação comum em uma <span class="text-gold-gradient">experiência sensorial inesquecível</span>.
+              </p>
+            </div>
+          </div>
+
+          <!-- Subtle bottom telemetry -->
+          <div class="story-telemetry">
+            <div class="telemetry-pill">FRAME SYNCHRONIZATION: LOCKED</div>
+            <div class="telemetry-pill">MOMENTUM SCRUB: TRUE</div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ========================================== -->
+      <!-- SEÇÃO 4: GALERIA PARALLAX ASSIMÉTRICA       -->
+      <!-- ========================================== -->
+      <section id="gallery-section" class="section gallery-section">
+        <div class="container">
+          <div class="gallery-header">
+            <span class="section-tag">04 // COMPOSIÇÃO ASSIMÉTRICA</span>
+            <h2 class="section-title">
+              Coleção de Artefatos <br />
+              <span class="text-gold-gradient">em Fluxo Gravitacional.</span>
+            </h2>
+            <p class="section-desc">
+              Cada coluna e cartão obedece a um vetor de inércia independente, criando um balanço visual natural e envolvente à medida que o scroll avança.
+            </p>
+          </div>
+
+          <div class="gallery-asym-grid">
+            <!-- Coluna 1 (Velocidade Diferente) -->
+            <div class="gallery-col col-left" data-speed="0.8">
+              
+              <article class="gallery-card card-tall magnetic-spotlight">
+                <div class="card-glow-spot"></div>
+                <div class="card-media-wrap">
+                  <div class="art-preview art-gold-monolith">
+                    <div class="art-shimmer"></div>
+                    <div class="art-symbol">✦</div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-meta">
+                    <span class="cat-pill">ARTEFATO I</span>
+                    <span class="coord-tag">3400K LIGHT</span>
+                  </div>
+                  <h3 class="card-heading">Monólito de Refração Áurea</h3>
+                  <p class="card-caption">Estrutura volumétrica esculpida com dispersão de luz prismática e acabamento em titânio polido.</p>
+                </div>
+              </article>
+
+              <article class="gallery-card card-compact magnetic-spotlight">
+                <div class="card-glow-spot"></div>
+                <div class="card-media-wrap">
+                  <div class="art-preview art-dark-rings">
+                    <div class="ring r1"></div>
+                    <div class="ring r2"></div>
+                    <div class="ring r3"></div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-meta">
+                    <span class="cat-pill">ARTEFATO II</span>
+                    <span class="coord-tag">AXIAL SPHERES</span>
+                  </div>
+                  <h3 class="card-heading">Anéis Gravitacionais Concêntricos</h3>
+                  <p class="card-caption">Camadas orbitais que reagem à velocidade angular do movimento do mouse.</p>
+                </div>
+              </article>
+
+            </div>
+
+            <!-- Coluna 2 (Velocidade Desacoplada e Mais Rápida) -->
+            <div class="gallery-col col-right" data-speed="1.25">
+
+              <article class="gallery-card card-compact magnetic-spotlight">
+                <div class="card-glow-spot"></div>
+                <div class="card-media-wrap">
+                  <div class="art-preview art-glass-prism">
+                    <div class="prism-geometry"></div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-meta">
+                    <span class="cat-pill">ARTEFATO III</span>
+                    <span class="coord-tag">FRESNEL SHADER</span>
+                  </div>
+                  <h3 class="card-heading">Prisma de Quartzo e Dourado</h3>
+                  <p class="card-caption">Superfície translúcida calculando cáusticas de luz em 60 frames por segundo.</p>
+                </div>
+              </article>
+
+              <article class="gallery-card card-tall magnetic-spotlight">
+                <div class="card-glow-spot"></div>
+                <div class="card-media-wrap">
+                  <div class="art-preview art-kinetic-sphere">
+                    <div class="sphere-mesh"></div>
+                    <div class="energy-core"></div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="card-meta">
+                    <span class="cat-pill">ARTEFATO IV</span>
+                    <span class="coord-tag">KINETIC CORE</span>
+                  </div>
+                  <h3 class="card-heading">Núcleo de Ressonância Estelar</h3>
+                  <p class="card-caption">Emissão de fótons sintéticos e micro-partículas que flutuam ao redor do eixo de visualização.</p>
+                </div>
+              </article>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ========================================== -->
+      <!-- SEÇÃO 5: STICKY SCROLL (TRANSFORMAÇÃO FIXA) -->
+      <!-- ========================================== -->
+      <section id="sticky-section" class="section sticky-section">
+        <div class="sticky-pin-container">
+          <div class="container sticky-layout">
+            
+            <!-- Left Column: Morphing Content & Step Progress -->
+            <div class="sticky-info-col">
+              <div class="sticky-header">
+                <span class="section-tag">05 // ENGRENAGEM STICKY</span>
+                <h2 class="section-title">
+                  O Espaço Congela. <br />
+                  <span class="text-gold-gradient">A Evolução Continua.</span>
+                </h2>
+              </div>
+
+              <!-- Step Navigation Indicators -->
+              <div class="sticky-steps-nav">
+                <div class="step-nav-item active" data-step="1">
+                  <div class="step-nav-bar"></div>
+                  <div class="step-nav-text">
+                    <span class="step-nav-num">01</span>
+                    <span class="step-nav-title">Estrutura & Geometria</span>
+                  </div>
+                </div>
+                <div class="step-nav-item" data-step="2">
+                  <div class="step-nav-bar"></div>
+                  <div class="step-nav-text">
+                    <span class="step-nav-num">02</span>
+                    <span class="step-nav-title">Refração e Luz Volumétrica</span>
+                  </div>
+                </div>
+                <div class="step-nav-item" data-step="3">
+                  <div class="step-nav-bar"></div>
+                  <div class="step-nav-text">
+                    <span class="step-nav-num">03</span>
+                    <span class="step-nav-title">Ressonância & Acabamento</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content Cards that Crossfade with Scroll -->
+              <div class="sticky-text-deck">
+                <!-- State 1 -->
+                <div class="sticky-state-card state-1 active">
+                  <div class="state-badge">ESTÁGIO I: GÊNESE ESTRUTURAL</div>
+                  <h3 class="state-title">A arquitetura invisível sob cada pixel.</h3>
+                  <p class="state-desc">
+                    Antes da luz, existe a precisão vetorial. Nossos algoritmos de interpolação mantêm a matriz espacial estável mesmo nas taxas mais intensas de aceleração.
+                  </p>
+                  <div class="state-specs">
+                    <div class="spec-tag">PRECISÃO SUB-PIXEL</div>
+                    <div class="spec-tag">MATRIZ 4X4 AFFINE</div>
+                  </div>
+                </div>
+
+                <!-- State 2 -->
+                <div class="sticky-state-card state-2">
+                  <div class="state-badge">ESTÁGIO II: ILUMINAÇÃO DINÂMICA</div>
+                  <h3 class="state-title">Cáusticas e reflexos em tempo real.</h3>
+                  <p class="state-desc">
+                    O vidro ganha vida quando a luz é calculada em tempo real. Gradientes dourados suaves reagem à inclinação da tela e ao ritmo do scroll.
+                  </p>
+                  <div class="state-specs">
+                    <div class="spec-tag">RAYMARCHING FRESNEL</div>
+                    <div class="spec-tag">DISPERSÃO ESPECTRAL</div>
+                  </div>
+                </div>
+
+                <!-- State 3 -->
+                <div class="sticky-state-card state-3">
+                  <div class="state-badge">ESTÁGIO III: SÍNTESE FINAL</div>
+                  <h3 class="state-title">Harmonia absoluta de toque e visão.</h3>
+                  <p class="state-desc">
+                    A fusão do momentum de scroll com a resposta tátil cria a ilusão definitiva de que a interface é um objeto físico e luxuoso na palma da mão.
+                  </p>
+                  <div class="state-specs">
+                    <div class="spec-tag">60 FPS CERTIFIED</div>
+                    <div class="spec-tag">PRODUTO DE ALTO PADRÃO</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Morphing 3D Glass Stage Container -->
+            <div class="sticky-visual-col">
+              <div class="morph-stage-wrapper">
+                <div class="morph-stage-aura"></div>
+                <div class="morph-frame glass-panel">
+                  
+                  <!-- Stage 1 Visual: Wireframe Grid & Geometric Polyhedron -->
+                  <div class="morph-layer stage-vis-1 active">
+                    <div class="wireframe-poly">
+                      <div class="poly-facet f1"></div>
+                      <div class="poly-facet f2"></div>
+                      <div class="poly-facet f3"></div>
+                      <div class="poly-facet f4"></div>
+                      <div class="poly-core-dot"></div>
+                    </div>
+                    <div class="stage-overlay-label">ESTRUTURA MATRICIAL // 01</div>
+                  </div>
+
+                  <!-- Stage 2 Visual: Crystal Refraction Disk with Golden Corona -->
+                  <div class="morph-layer stage-vis-2">
+                    <div class="crystal-disk">
+                      <div class="disk-glow"></div>
+                      <div class="disk-refraction"></div>
+                      <div class="disk-rings"></div>
+                    </div>
+                    <div class="stage-overlay-label">REFRAÇÃO VOLUMÉTRICA // 02</div>
+                  </div>
+
+                  <!-- Stage 3 Visual: Radiant Kinetic Monolith with Golden Sparks -->
+                  <div class="morph-layer stage-vis-3">
+                    <div class="radiant-monolith">
+                      <div class="radiant-core"></div>
+                      <div class="radiant-aura-pulse"></div>
+                      <div class="radiant-halo"></div>
+                    </div>
+                    <div class="stage-overlay-label">SÍNTESE CINEMATOGRÁFICA // 03</div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ========================================== -->
+      <!-- SEÇÃO 6: FINAL CINEMATOGRÁFICO & MASK REVEAL -->
+      <!-- ========================================== -->
+      <section id="final-section" class="section final-section">
+        <div class="final-container">
+          
+          <!-- Expanding Central Element on Scroll -->
+          <div class="final-portal-scaler">
+            <div class="portal-corona"></div>
+            <div class="portal-ring"></div>
+            <div class="portal-mesh"></div>
+          </div>
+
+          <div class="final-content-overlay">
+            <div class="final-badge-wrap">
+              <div class="final-badge">
+                <span>✦</span>
+                <span>O TOPO DA EXPERIÊNCIA DIGITAL</span>
+                <span>✦</span>
+              </div>
+            </div>
+
+            <!-- Mask Reveal Big Headline -->
+            <div class="final-mask-headline-wrap">
+              <h2 class="final-mask-headline">
+                <span class="mask-line"><span class="mask-inner">O FUTURO DO DESIGN</span></span>
+                <span class="mask-line"><span class="mask-inner text-gold-gradient">NÃO É ESTÁTICO.</span></span>
+                <span class="mask-line"><span class="mask-inner">É CINEMÁTICO.</span></span>
+              </h2>
+            </div>
+
+            <p class="final-subtext">
+              Construído para impressionar desde o primeiro frame até a última rolagem.
+            </p>
+
+            <div class="final-actions">
+              <a href="#hero-section" class="btn-primary btn-large magnetic-target" id="back-to-top">
+                <span>Voltar ao Topo</span>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 11.5V2.5M7 2.5L2.5 7M7 2.5L11.5 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ========================================== -->
+      <!-- LUXURY EDITORIAL FOOTER                    -->
+      <!-- ========================================== -->
+      <footer id="site-footer" class="site-footer">
+        <div class="container footer-inner">
+          <div class="footer-top">
+            <div class="footer-brand">
+              <div class="footer-logo">
+                <span class="brand-icon">✦</span>
+                <span class="brand-name">AURA<span class="gold-dot">.</span>LAB</span>
+              </div>
+              <p class="footer-tagline">
+                Protótipo de demonstração de Parallax Scroll de alta performance & padrão Awwwards.
+              </p>
+            </div>
+
+            <div class="footer-columns">
+              <div class="footer-col">
+                <span class="col-title">TECNOLOGIAS</span>
+                <ul class="col-list">
+                  <li><span>GSAP 3.12 (ScrollTrigger)</span></li>
+                  <li><span>Lenis Inertial Momentum</span></li>
+                  <li><span>Three.js WebGL Core</span></li>
+                  <li><span>Vanilla CSS / GPU Accel</span></li>
+                </ul>
+              </div>
+
+              <div class="footer-col">
+                <span class="col-title">INSPIRAÇÕES</span>
+                <ul class="col-list">
+                  <li><span>Apple Keynotes</span></li>
+                  <li><span>Linear.app Architecture</span></li>
+                  <li><span>Studio Freight / Lenis</span></li>
+                  <li><span>Awwwards Site of the Year</span></li>
+                </ul>
+              </div>
+
+              <div class="footer-col">
+                <span class="col-title">CONTROLE</span>
+                <ul class="col-list">
+                  <li><button id="perf-toggle" class="footer-btn magnetic-target">TAXA: 60 FPS CRAVADO</button></li>
+                  <li><button id="reduce-motion-btn" class="footer-btn magnetic-target">PREFERS MOTION: ON</button></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <div class="footer-copy">
+              © 2026 AURA LAB. TODOS OS DIREITOS RESERVADOS. PROTÓTIPO DE DEMONSTRAÇÃO.
+            </div>
+            <div class="footer-status">
+              <span class="status-dot"></span>
+              <span>SISTEMA DE PARALLAX ATIVO & SINCRONIZADO</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
